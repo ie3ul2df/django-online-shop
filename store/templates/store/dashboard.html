@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="container mt-5">
+  <div class="card shadow">
+    <div class="card-header bg-primary text-white">
+      <h3>Welcome, {{ user.username }}!</h3>
+    </div>
+    <div class="card-body">
+      <p>Email: {{ user.email }}</p>
+
+      <div class="row">
+        <div class="col-md-4">
+          <a href="{% url 'account_change_password' %}" class="btn btn-outline-secondary w-100 mb-2"> Change Password </a>
+        </div>
+        <div class="col-md-4">
+          <a href="/orders/" class="btn btn-outline-secondary w-100 mb-2"> View Orders </a>
+        </div>
+        <div class="col-md-4">
+          <a href="/addresses/" class="btn btn-outline-secondary w-100 mb-2"> Manage Addresses </a>
+        </div>
+      </div>
+
+      <a href="{% url 'account_logout' %}" class="btn btn-danger mt-3"> Logout </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
