@@ -141,3 +141,26 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/dashboard/'
 
+# Log emails to the console while developing
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Allow login with username or email
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+
+# Email is required
+ACCOUNT_EMAIL_REQUIRED = True
+
+# Email verification is mandatory
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+# Ask to enter email twice when signing up
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+
+# Minimum username length
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+
+# Where to go after login
+# LOGIN_REDIRECT_URL = '/success/'  # (temporary, we’ll change this soon)
+
+# Login URL
+LOGIN_URL = '/accounts/login/'
